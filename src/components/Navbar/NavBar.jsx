@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='bg-[#f8f8f8] sticky top-0 z-50'>
+    <div className='bg-[#f8f8f8]'>
       <div className="navbar w-11/12 mx-auto">
         <div className="flex-1">
           <Link to="/" className="text-xl font-bold">
