@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className='bg-[#f8f8f8]'>
+    <div className='bg-[#f8f8f8] sticky top-0 z-50'>
       <div className="navbar w-11/12 mx-auto">
         <div className="flex-1">
           <Link to="/" className="text-xl font-bold">
@@ -70,6 +70,7 @@ const NavBar = () => {
               </div>
               <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                 <li><span className="hover:bg-[#236053] hover:text-white rounded">{user?.displayName || "Profile"}</span></li>
+                <li><Link to="/wishlist"><span className="hover:bg-[#236053] hover:text-white rounded">Wishlist</span></Link></li>
                 <li><span className="hover:bg-[#236053] hover:text-white rounded">Settings</span></li>
                 <li><button onClick={handleLogout} className="hover:bg-[#236053] hover:text-white rounded text-left w-full">Logout</button></li>
               </ul>

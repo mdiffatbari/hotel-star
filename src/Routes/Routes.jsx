@@ -14,6 +14,7 @@ import About from '../pages/About/About';
 import RoomDetails from '../pages/RoomDetails/RoomDetails';
 import Gallery from '../pages/Gallery/Gallery';
 import Contact from '../pages/Contact/Contact';
+import Wishlist from '../pages/Wishlist/Wishlist';
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/wishlist",
+        Component: Wishlist
       },
       {
         path: "/auth",
