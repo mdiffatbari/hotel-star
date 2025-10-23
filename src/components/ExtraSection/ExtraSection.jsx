@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaBed, FaUtensils, FaSpa } from 'react-icons/fa';
-import { AiOutlineStar } from 'react-icons/ai';
+import { FaBed, FaUtensils, FaSpa, FaSwimmer, FaWifi, FaConciergeBell } from 'react-icons/fa';
 
 const ExtraSection = () => {
     return (
@@ -37,25 +36,30 @@ const ExtraSection = () => {
                 </div>
             </section>
 
-            {/* Section 2: Testimonials */}
+            {/* Section 2: Why Choose Us */}
             <section className="text-center">
-                <h2 className="text-3xl font-bold mb-10">What Our Guests Say</h2>
-                <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-[#f8f8f8] shadow rounded p-6 flex flex-col items-center">
-                        <div className="text-yellow-400 text-2xl mb-2 flex">
-                            <AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar />
+                <h2 className="text-3xl font-bold mb-10">Why Choose Hotel Star</h2>
+                <div className="grid md:grid-cols-3 gap-8">
+                    <div className="bg-white shadow rounded p-8 hover:shadow-xl transition transform hover:-translate-y-1">
+                        <div className="text-[#236053] text-5xl mb-4 flex justify-center">
+                            <FaSwimmer />
                         </div>
-                        <p className="italic mb-4 text-gray-700 text-center">"Absolutely loved our stay! The rooms were clean and the staff was extremely friendly."</p>
-                        <h3 className="font-semibold text-lg">- Sarah M.</h3>
-                        <img className="w-16 h-16 rounded-full mt-4" src="https://i.ibb.co/2n6tH9R/user1.jpg" alt="Sarah" />
+                        <h3 className="text-xl font-semibold mb-2">Swimming Pool</h3>
+                        <p className="text-gray-600">Enjoy our luxurious outdoor and indoor pools, perfect for relaxation and fun.</p>
                     </div>
-                    <div className="bg-[#f8f8f8] shadow rounded p-6 flex flex-col items-center">
-                        <div className="text-yellow-400 text-2xl mb-2 flex">
-                            <AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar /><AiOutlineStar />
+                    <div className="bg-white shadow rounded p-8 hover:shadow-xl transition transform hover:-translate-y-1">
+                        <div className="text-[#236053] text-5xl mb-4 flex justify-center">
+                            <FaWifi />
                         </div>
-                        <p className="italic mb-4 text-gray-700 text-center">"The spa and wellness facilities were top-notch. Will definitely come back!"</p>
-                        <h3 className="font-semibold text-lg">- James L.</h3>
-                        <img className="w-16 h-16 rounded-full mt-4" src="https://i.ibb.co/fGmQpS6/user2.jpg" alt="James" />
+                        <h3 className="text-xl font-semibold mb-2">Free Wi-Fi</h3>
+                        <p className="text-gray-600">Stay connected with fast and reliable Wi-Fi throughout the hotel.</p>
+                    </div>
+                    <div className="bg-white shadow rounded p-8 hover:shadow-xl transition transform hover:-translate-y-1">
+                        <div className="text-[#236053] text-5xl mb-4 flex justify-center">
+                            <FaConciergeBell />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">24/7 Concierge</h3>
+                        <p className="text-gray-600">Our dedicated staff is always available to make your stay effortless and memorable.</p>
                     </div>
                 </div>
             </section>
