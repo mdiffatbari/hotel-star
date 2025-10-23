@@ -18,6 +18,12 @@ https://hotel-star-ee81a.web.app
 - Animated UI elements using Lottie
 - SEO friendly via React Helmet
 
+# New Features
+
+- Invoice Download
+- Wishlist
+- MultiLanguage
+
 # NPM Packages Used
 - react
 - react-router
