@@ -3,27 +3,60 @@ import hotelJpg from '../../assets/hotel.jpg'
 import { Link } from 'react-router';
 import { FaBed, FaConciergeBell, FaMapMarkedAlt } from 'react-icons/fa';
 import TopRooms from '../TopRooms/TopRooms';
+import { FaSpa, FaUtensils } from 'react-icons/fa';
 
 const TwoSection = () => {
     return (
         <div>
 
 
-            <div className="hero bg-base-200 py-20">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img
-                        src={hotelJpg}
-                        className="max-w-sm rounded-lg shadow-2xl"
-                    />
-                    <div>
-                        <h1 className="text-5xl font-bold">Relax in our Hotel Resort</h1>
-                        <p className="py-6">
-                            Escape to the heart of relaxation and luxury. Whether you're traveling for <br />business or pleasure, Hotel Star promises a refined experience in every detail.
+            <div className="bg-base-200 py-20">
+                <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center lg:gap-16">
+
+                    {/* Left Image */}
+                    <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
+                        <img
+                            src={hotelJpg}
+                            alt="Hotel Resort"
+                            className="w-full h-auto rounded-xl shadow-2xl object-cover transition-transform transform hover:scale-105"
+                        />
+                    </div>
+
+                    {/* Right Content */}
+                    <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
+                        <h1 className="text-4xl sm:text-5xl font-bold text-[#236053]">
+                            Relax and Unwind at Hotel Star
+                        </h1>
+                        <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                            Escape to the perfect blend of comfort and luxury. Enjoy elegantly designed rooms, world-class dining, and premium amenities that make every stay unforgettable.
                         </p>
-                        <Link to="/rooms"><button className="btn bg-[#236053] text-white">View Rooms</button></Link>
+
+                        {/* Key Highlights */}
+                        <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 justify-center lg:justify-start mt-6">
+                            <div className="flex items-center gap-3">
+                                <FaBed className="text-[#236053] text-2xl" />
+                                <span className="font-medium text-gray-700">Luxury Rooms</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <FaUtensils className="text-[#236053] text-2xl" />
+                                <span className="font-medium text-gray-700">Gourmet Dining</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <FaSpa className="text-[#236053] text-2xl" />
+                                <span className="font-medium text-gray-700">Wellness & Spa</span>
+                            </div>
+                        </div>
+
+                        {/* Call to Action */}
+                        <Link to="/rooms">
+                            <button className="mt-8 px-8 py-3 bg-[#236053] text-white rounded-lg text-lg hover:bg-[#1b4a42] transition">
+                                View Rooms
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
+
 
             <TopRooms></TopRooms>
 
@@ -36,7 +69,7 @@ const TwoSection = () => {
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        
+
                         <div className="bg-[#ffffff1a] hover:bg-[#ffffff33] transition rounded-xl p-6">
                             <FaBed className="text-4xl mb-4 mx-auto text-white" />
                             <h3 className="text-xl font-semibold mb-2">Modern Comfortable Rooms</h3>
@@ -45,7 +78,7 @@ const TwoSection = () => {
                             </p>
                         </div>
 
-                        
+
                         <div className="bg-[#ffffff1a] hover:bg-[#ffffff33] transition rounded-xl p-6">
                             <FaConciergeBell className="text-4xl mb-4 mx-auto text-white" />
                             <h3 className="text-xl font-semibold mb-2">24/7 Guest Service</h3>
@@ -54,7 +87,7 @@ const TwoSection = () => {
                             </p>
                         </div>
 
-                        
+
                         <div className="bg-[#ffffff1a] hover:bg-[#ffffff33] transition rounded-xl p-6">
                             <FaMapMarkedAlt className="text-4xl mb-4 mx-auto text-white" />
                             <h3 className="text-xl font-semibold mb-2">Prime Location</h3>

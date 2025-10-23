@@ -3,7 +3,7 @@ import { FaBed, FaUtensils, FaSpa, FaSwimmer, FaWifi, FaConciergeBell } from 're
 
 const ExtraSection = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4 py-16 space-y-20">
+        <div className="px-4 md:px-20 py-16 space-y-20">
             
             {/* Section 1: Our Services */}
             <section className="text-center">
