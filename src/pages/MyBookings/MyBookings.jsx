@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
-
+import jsPDF from 'jspdf';
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -84,6 +84,50 @@ const MyBookings = () => {
     });
   };
 
+  const handleDownloadInvoice = (booking) => {
+    const doc = new jsPDF();
+
+    // Header
+    doc.setFontSize(18);
+    doc.text("Hotel Star - Invoice", 20, 20);
+
+    // Line separator
+    doc.setLineWidth(0.5);
+    doc.line(20, 25, 190, 25);
+
+    // Customer info
+    doc.setFontSize(12);
+    doc.text(`Booking ID: ${booking._id}`, 20, 35);
+    doc.text(`Customer: ${user.displayName}`, 20, 42);
+    doc.text(`Email: ${user.email}`, 20, 49);
+
+    // Booking details
+    const startY = 60;
+    const tableRows = [
+      ["Room", booking.title],
+      ["Price", `$${booking.price}`],
+      ["Date", new Date(booking.date).toLocaleDateString()],
+      ["Status", booking.status]
+    ];
+
+    tableRows.forEach((row, i) => {
+      const y = startY + i * 10;
+      doc.setFont(undefined, "bold");
+      doc.text(row[0], 20, y);
+      doc.setFont(undefined, "normal");
+      doc.text(row[1], 80, y);
+    });
+
+    // Footer
+    doc.setLineWidth(0.5);
+    doc.line(20, 110, 190, 110);
+    doc.setFontSize(10);
+    doc.text("Thank you for booking with Hotel Star!", 20, 120);
+
+    // Save PDF
+    doc.save(`invoice_${booking._id}.pdf`);
+  };
+
 
   return (
     <>
@@ -101,21 +145,26 @@ const MyBookings = () => {
                 <p><strong>Price:</strong> ${booking.price}</p>
                 <p><strong>Date:</strong> {new Date(booking.date).toLocaleDateString()}</p>
                 <p className="text-green-600 font-medium">{booking.status}</p>
-                <div className='flex items-center gap-3'>
+                <div className='flex flex-wrap items-center gap-3 mt-4'>
                   <button
-                  className="mt-4 btn btn-sm bg-[#236053] text-white hover:bg-[#1b4a42]"
-                  onClick={() => handleReview(booking)}
-                >
-                  Give Review
-                </button>
-                <button
-                  className="mt-4 btn btn-sm bg-red-600 text-white hover:bg-red-700"
-                  onClick={() => handleCancel(booking)}
-                >
-                  Cancel Booking
-                </button>
+                    className="btn btn-sm bg-[#236053] text-white hover:bg-[#1b4a42]"
+                    onClick={() => handleReview(booking)}
+                  >
+                    Give Review
+                  </button>
+                  <button
+                    className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
+                    onClick={() => handleCancel(booking)}
+                  >
+                    Cancel Booking
+                  </button>
+                  <button
+                    className="btn btn-sm bg-blue-600 text-white hover:bg-blue-700"
+                    onClick={() => handleDownloadInvoice(booking)}
+                  >
+                    Download Invoice
+                  </button>
                 </div>
-
               </div>
             ))}
           </div>
@@ -128,4 +177,3 @@ const MyBookings = () => {
 };
 
 export default MyBookings;
-

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
+
 const Wishlist = () => {
   const { user, loading: authLoading } = useContext(AuthContext);
   const [wishlist, setWishlist] = useState([]);

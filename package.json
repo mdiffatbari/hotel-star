@@ -12,6 +12,9 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
     "firebase": "^11.9.1",
+    "i18next": "^25.6.0",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "jspdf": "^3.0.3",
     "leaflet": "^1.9.4",
     "lottie-react": "^2.4.1",
     "moment": "^2.30.1",
@@ -19,6 +22,7 @@
     "react-datepicker": "^8.4.0",
     "react-dom": "^19.1.0",
     "react-helmet": "^6.1.0",
+    "react-i18next": "^16.1.5",
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
     "react-responsive-carousel": "^3.2.23",
